@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://riya-decor.vercel.app/sitemap.xml
