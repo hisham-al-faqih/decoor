@@ -15,7 +15,7 @@ htmlFiles.forEach(file => {
 
     // Ensure a proper favicon exists, if not, add it before <link rel="stylesheet"
     if (!content.includes('rel="icon"')) {
-        content = content.replace(/<link rel="stylesheet"/, '<link rel="icon" type="image/png" href="images/logo.png">\n<link rel="stylesheet"');
+        content = content.replace(/<link rel="stylesheet"/, '<link rel="icon" type="image/png" href="images/logo.webp">\n<link rel="stylesheet"');
     }
 
     // 2. Fix missing </head> if the site-header was injected wrongly

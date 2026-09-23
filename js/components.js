@@ -6,7 +6,7 @@ class SiteHeader extends HTMLElement {
         <header class="header">
             <nav class="navbar container">
                 <a href="/" class="logo">
-                    <img src="images/logo.png" alt="شعار ${SiteConfig.name}" width="65" height="65" loading="lazy">
+                    <img src="images/logo.webp" alt="شعار ${SiteConfig.name}" width="65" height="65" loading="lazy">
                     <span>${SiteConfig.name}</span>
                 </a>
                 <ul class="nav-menu">
