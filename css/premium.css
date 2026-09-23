@@ -1,0 +1,361 @@
+/* 
+ * ==========================================================================
+ * TRUE PREMIUM UI/UX OVERRIDE - PHASE 2 (Header, Hero, Footer, Buttons)
+ * ==========================================================================
+ */
+
+:root {
+    --gold: #C8B08A;
+    --dark: #25221F;
+    --offwhite: #F7F4EF;
+    --white: #FFFFFF;
+    
+    /* Frosted Glass System */
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-blur: blur(16px);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    /* Dark Glass System */
+    --glass-dark-bg: rgba(37, 34, 31, 0.6);
+    --glass-dark-border: rgba(200, 176, 138, 0.3);
+    
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Fixes */
+html, body {
+    overflow-x: hidden;
+    background-color: var(--offwhite) !important;
+}
+
+/* ==========================================================================
+   FROSTED GLASS BUTTONS
+   ========================================================================== */
+.hero-btn, .btn-premium, .float-btn-lux {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem !important;
+    border-radius: 50px !important;
+    font-family: 'Tajawal', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    text-decoration: none !important;
+    transition: var(--transition) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    box-shadow: var(--glass-shadow) !important;
+    border: 1px solid var(--glass-border) !important;
+}
+
+/* Primary Hero Button (Dark/Gold Glass) */
+.hero-btn:first-child, .btn-primary-glass {
+    background: var(--glass-dark-bg) !important;
+    color: var(--white) !important;
+    border-color: var(--glass-dark-border) !important;
+}
+.hero-btn:first-child:hover, .btn-primary-glass:hover {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* Secondary Hero Button (Light Glass) */
+.hero-btn:last-child, .btn-secondary-glass {
+    background: var(--glass-bg) !important;
+    color: var(--white) !important;
+}
+.hero-btn:last-child:hover, .btn-secondary-glass:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* ==========================================================================
+   HEADER (Floating Pill)
+   ========================================================================== */
+site-header {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+.premium-header {
+    width: 100%;
+    max-width: 1200px;
+    background: var(--glass-dark-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border: 1px solid var(--glass-dark-border) !important;
+    border-radius: 50px !important;
+    padding: 0.8rem 2rem !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.logo img {
+    height: 50px;
+    object-fit: contain;
+}
+.nav-menu ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0; padding: 0;
+}
+.nav-menu a {
+    color: var(--white) !important;
+    font-weight: 500 !important;
+    font-size: 1.05rem !important;
+    text-decoration: none;
+    transition: var(--transition);
+}
+.nav-menu a:hover {
+    color: var(--gold) !important;
+}
+.btn-nav-cta {
+    padding: 0.6rem 1.8rem !important;
+    border-radius: 50px !important;
+    background: var(--glass-bg) !important;
+    border: 1px solid var(--glass-border) !important;
+    color: var(--white) !important;
+    font-weight: 600 !important;
+}
+.btn-nav-cta:hover {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero, .service-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh !important;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    margin-top: 0 !important;
+    border-radius: 0 0 40px 40px !important;
+    overflow: hidden;
+}
+.hero-bg-image {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover !important;
+    object-position: center !important;
+    z-index: 0;
+}
+.hero::after, .service-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Warm dark overlay mimicking the reference */
+    background: linear-gradient(90deg, rgba(37,34,31,0.9) 0%, rgba(37,34,31,0.7) 40%, rgba(37,34,31,0.2) 100%) !important;
+    z-index: 1;
+}
+.hero-content, .service-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 5%;
+    margin-right: 5%;
+}
+.hero-content h1, .service-hero-content h1 {
+    font-size: clamp(3rem, 5vw, 4.5rem) !important;
+    font-weight: 800 !important;
+    color: var(--white) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+}
+.hero-content p, .service-hero-content p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem) !important;
+    color: rgba(247, 244, 239, 0.9) !important;
+    margin-bottom: 3rem !important;
+    line-height: 1.8 !important;
+}
+.hero-buttons, .service-hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   FOOTER PREMIUM
+   ========================================================================== */
+.footer {
+    background: var(--dark) !important;
+    color: var(--offwhite) !important;
+    padding: 6rem 0 2rem !important;
+    margin-top: 4rem;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    position: relative;
+}
+.footer-content {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr !important;
+    gap: 3rem !important;
+}
+.footer h3 {
+    color: var(--white) !important;
+    font-size: 1.4rem !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 700;
+}
+.footer p, .footer a, .footer li {
+    color: rgba(247, 244, 239, 0.7) !important;
+    line-height: 1.8;
+}
+.footer a:hover {
+    color: var(--gold) !important;
+}
+.footer .social-icons a {
+    background: rgba(255,255,255,0.05) !important;
+    color: var(--white) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+}
+.footer .social-icons a:hover {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+}
+.map-container {
+    border-radius: 24px !important;
+    overflow: hidden;
+    height: 200px !important;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05) !important;
+    margin-top: 4rem !important;
+    padding-top: 2rem !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==========================================================================
+   FLOATING BUTTONS
+   ========================================================================== */
+.floating-contact-lux {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+.float-btn-lux {
+    width: 65px !important;
+    height: 65px !important;
+    padding: 0 !important;
+    color: var(--white) !important;
+}
+.float-btn-lux.whatsapp {
+    background: rgba(37, 211, 102, 0.6) !important;
+    border-color: rgba(37, 211, 102, 0.4) !important;
+}
+.float-btn-lux.whatsapp:hover {
+    background: rgba(37, 211, 102, 0.9) !important;
+}
+.float-btn-lux.phone {
+    background: var(--glass-dark-bg) !important;
+    border-color: var(--glass-dark-border) !important;
+}
+.float-btn-lux.phone:hover {
+    background: var(--gold) !important;
+}
+.float-btn-lux svg {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE - TABLET & MOBILE
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .premium-header {
+        max-width: 95%;
+    }
+    .footer-content {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+@media (max-width: 768px) {
+    .premium-header {
+        padding: 0.8rem 1.5rem !important;
+    }
+    .nav-menu {
+        display: none; /* We will use a toggle in app-components.js */
+    }
+    .nav-menu.active {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--dark) !important;
+        flex-direction: column;
+        padding: 2rem;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .nav-toggle {
+        display: flex !important;
+        flex-direction: column;
+        gap: 6px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .nav-toggle span {
+        width: 30px; height: 3px;
+        background: var(--white);
+        border-radius: 3px;
+    }
+    .hero, .service-hero {
+        min-height: 80vh !important;
+        padding-top: 120px;
+    }
+    .hero-content, .service-hero-content {
+        margin-right: 0;
+        text-align: center;
+    }
+    .hero::after, .service-hero::after {
+        background: linear-gradient(180deg, rgba(37,34,31,0.5) 0%, rgba(37,34,31,0.9) 100%) !important;
+    }
+    .hero-buttons, .service-hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+    }
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    .floating-contact-lux {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+    }
+}
