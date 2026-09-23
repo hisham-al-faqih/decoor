@@ -4,7 +4,7 @@
  * ==========================================================================
  */
 
- :root {
+:root {
     --gold: #C8B08A;
     --dark: #25221F;
     --offwhite: #F7F4EF;
@@ -57,7 +57,7 @@ html, body {
     border-color: var(--glass-dark-border) !important;
 }
 .hero-btn:first-child:hover, .btn-primary-glass:hover {
-    background: rgba(200, 176, 138, 0.6) !important;
+    background: var(--gold) !important;
     border-color: var(--gold) !important;
     transform: translateY(-3px) !important;
 }
@@ -77,24 +77,24 @@ html, body {
    ========================================================================== */
 site-header {
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 0;
     width: 100%;
     z-index: 1000;
     display: flex;
     justify-content: center;
-    padding: 0 4%;
+    padding: 0 20px;
 }
 .premium-header {
     width: 100%;
-    max-width: 1300px;
-    background: rgba(37, 34, 31, 0.4) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 60px !important;
-    padding: 0.5rem 1.5rem !important;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important;
+    max-width: 1200px;
+    background: var(--glass-dark-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border: 1px solid var(--glass-dark-border) !important;
+    border-radius: 50px !important;
+    padding: 0.8rem 2rem !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
 }
 .nav-container {
     display: flex;
@@ -102,22 +102,11 @@ site-header {
     align-items: center;
     width: 100%;
 }
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.logo-area img {
-    height: 55px;
+.logo img {
+    height: 50px;
     object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
-.company-name {
-    color: var(--white) !important;
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: 0.5px;
-}.nav-menu ul {
+.nav-menu ul {
     display: flex;
     gap: 2rem;
     list-style: none;
@@ -133,26 +122,16 @@ site-header {
 .nav-menu a:hover {
     color: var(--gold) !important;
 }
-.header-actions {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-.btn-glass-phone {
-    display: inline-flex !important;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255,255,255,0.1) !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
-    border-radius: 40px !important;
-    padding: 10px 24px !important;
+.btn-nav-cta {
+    padding: 0.6rem 1.8rem !important;
+    border-radius: 50px !important;
+    background: var(--glass-bg) !important;
+    border: 1px solid var(--glass-border) !important;
     color: var(--white) !important;
     font-weight: 600 !important;
-    text-decoration: none !important;
-    transition: all 0.3s !important;
 }
-.btn-glass-phone:hover {
-    background: rgba(200, 176, 138, 0.4) !important;
+.btn-nav-cta:hover {
+    background: var(--gold) !important;
     border-color: var(--gold) !important;
 }
 
@@ -165,11 +144,10 @@ site-header {
     min-height: 100vh !important;
     display: flex;
     align-items: center;
-    padding-top: 100px; /* space for header */
+    padding-top: 100px;
     margin-top: 0 !important;
     border-radius: 0 0 40px 40px !important;
     overflow: hidden;
-    background: transparent !important;
 }
 .hero-bg-image {
     position: absolute;
@@ -182,26 +160,26 @@ site-header {
     content: '';
     position: absolute;
     inset: 0;
-    /* Warm dark overlay mimicking the reference, gradient from right to left */
-    background: linear-gradient(90deg, rgba(37,34,31,0.8) 0%, rgba(37,34,31,0.5) 50%, rgba(37,34,31,0.1) 100%) !important;
+    /* Warm dark overlay mimicking the reference */
+    background: linear-gradient(90deg, rgba(37,34,31,0.9) 0%, rgba(37,34,31,0.7) 40%, rgba(37,34,31,0.2) 100%) !important;
     z-index: 1;
 }
 .hero-content, .service-hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
-    padding: 0;
-    margin-right: 8%; /* Right aligned */
+    max-width: 800px;
+    padding: 0 5%;
+    margin-right: 5%;
 }
 .hero-content h1, .service-hero-content h1 {
-    font-size: clamp(2.5rem, 4vw, 4rem) !important;
+    font-size: clamp(3rem, 5vw, 4.5rem) !important;
     font-weight: 800 !important;
     color: var(--white) !important;
-    line-height: 1.3 !important;
+    line-height: 1.2 !important;
     margin-bottom: 1.5rem !important;
 }
 .hero-content p, .service-hero-content p {
-    font-size: clamp(1.1rem, 2vw, 1.25rem) !important;
+    font-size: clamp(1.1rem, 2vw, 1.4rem) !important;
     color: rgba(247, 244, 239, 0.9) !important;
     margin-bottom: 3rem !important;
     line-height: 1.8 !important;
@@ -226,23 +204,8 @@ site-header {
 }
 .footer-content {
     display: grid !important;
-    grid-template-columns: 2fr 1.5fr 1.5fr 2fr !important;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr !important;
     gap: 3rem !important;
-}
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 1.5rem;
-}
-.footer-logo img {
-    height: 50px;
-    filter: brightness(0) invert(1);
-}
-.footer h2 {
-    color: var(--white) !important;
-    font-size: 1.3rem !important;
-    margin: 0 !important;
 }
 .footer h3 {
     color: var(--white) !important;
@@ -254,21 +217,13 @@ site-header {
     color: rgba(247, 244, 239, 0.7) !important;
     line-height: 1.8;
 }
-.footer ul { list-style: none; padding: 0; margin: 0; }
-.footer ul li { margin-bottom: 10px; }
 .footer a:hover {
     color: var(--gold) !important;
-}
-.footer .social-icons {
-    display: flex; gap: 10px; margin-top: 1.5rem;
 }
 .footer .social-icons a {
     background: rgba(255,255,255,0.05) !important;
     color: var(--white) !important;
     border: 1px solid rgba(255,255,255,0.1) !important;
-    width: 40px; height: 40px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    transition: var(--transition);
 }
 .footer .social-icons a:hover {
     background: var(--gold) !important;
@@ -289,12 +244,6 @@ site-header {
     justify-content: space-between;
     align-items: center;
 }
-.developer a {
-    display: flex; align-items: center; gap: 8px;
-    color: var(--gold) !important;
-    text-decoration: none;
-}
-.developer img { height: 20px; }
 
 /* ==========================================================================
    FLOATING BUTTONS
@@ -309,10 +258,9 @@ site-header {
     z-index: 9999;
 }
 .float-btn-lux {
-    width: 60px !important;
-    height: 60px !important;
+    width: 65px !important;
+    height: 65px !important;
     padding: 0 !important;
-    border-radius: 50% !important;
     color: var(--white) !important;
 }
 .float-btn-lux.whatsapp {
@@ -321,7 +269,6 @@ site-header {
 }
 .float-btn-lux.whatsapp:hover {
     background: rgba(37, 211, 102, 0.9) !important;
-    transform: scale(1.1) !important;
 }
 .float-btn-lux.phone {
     background: var(--glass-dark-bg) !important;
@@ -329,48 +276,41 @@ site-header {
 }
 .float-btn-lux.phone:hover {
     background: var(--gold) !important;
-    transform: scale(1.1) !important;
 }
 .float-btn-lux svg {
-    width: 28px !important;
-    height: 28px !important;
+    width: 30px !important;
+    height: 30px !important;
 }
 
 /* ==========================================================================
    RESPONSIVE - TABLET & MOBILE
    ========================================================================== */
 @media (max-width: 1024px) {
-    site-header { padding: 0 2%; }
-    .company-name { display: none; } /* Hide on smaller tablet for space */
+    .premium-header {
+        max-width: 95%;
+    }
     .footer-content {
         grid-template-columns: 1fr 1fr !important;
     }
 }
 @media (max-width: 768px) {
-    site-header { top: 15px; }
     .premium-header {
-        padding: 0.6rem 1rem !important;
-        border-radius: 40px !important;
+        padding: 0.8rem 1.5rem !important;
     }
-    .nav-menu { display: none; }
+    .nav-menu {
+        display: none; /* We will use a toggle in app-components.js */
+    }
     .nav-menu.active {
         display: flex;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(37, 34, 31, 0.95) !important;
-        backdrop-filter: blur(20px);
+        background: var(--dark) !important;
         flex-direction: column;
         padding: 2rem;
         border-radius: 20px;
         margin-top: 10px;
-        text-align: center;
-        border: 1px solid rgba(255,255,255,0.1);
-    }
-    .nav-menu ul {
-        flex-direction: column;
-        gap: 1.5rem;
     }
     .nav-toggle {
         display: flex !important;
@@ -379,41 +319,34 @@ site-header {
         background: transparent;
         border: none;
         cursor: pointer;
-        padding: 5px;
     }
     .nav-toggle span {
-        width: 25px; height: 2px;
+        width: 30px; height: 3px;
         background: var(--white);
-        border-radius: 2px;
+        border-radius: 3px;
     }
-    .btn-glass-phone {
-        padding: 8px 16px !important;
-    }
-    .btn-glass-phone span { display: none; } /* Show only icon on mobile */
-    
     .hero, .service-hero {
         min-height: 80vh !important;
+        padding-top: 120px;
     }
     .hero-content, .service-hero-content {
         margin-right: 0;
         text-align: center;
-        padding: 0 20px;
     }
     .hero::after, .service-hero::after {
-        background: linear-gradient(180deg, rgba(37,34,31,0.3) 0%, rgba(37,34,31,0.9) 100%) !important;
+        background: linear-gradient(180deg, rgba(37,34,31,0.5) 0%, rgba(37,34,31,0.9) 100%) !important;
     }
     .hero-buttons, .service-hero-buttons {
         justify-content: center;
         flex-direction: column;
     }
-    .hero-btn { width: 100%; justify-content: center; }
-    
     .footer-content {
         grid-template-columns: 1fr !important;
         text-align: center;
     }
-    .footer-logo { justify-content: center; }
-    .social-icons { justify-content: center; }
+    .social-icons {
+        justify-content: center;
+    }
     .footer-bottom {
         flex-direction: column;
         gap: 1.5rem;
@@ -426,5 +359,3 @@ site-header {
         flex-direction: row;
     }
 }
-
-.nav-toggle { display: none; }
