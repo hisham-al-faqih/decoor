@@ -8,7 +8,7 @@
     --gold: #C8B08A;
     --dark: #25221F;
     --offwhite: #F7F4EF;
-    --white: #FFFFFF;
+    --white: #F7F4EF;
     
     /* Frosted Glass System */
     --glass-bg: rgba(255, 255, 255, 0.15);
@@ -87,14 +87,16 @@ site-header {
 }
 .premium-header {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     background: var(--glass-dark-bg) !important;
     backdrop-filter: var(--glass-blur) !important;
     -webkit-backdrop-filter: var(--glass-blur) !important;
     border: 1px solid var(--glass-dark-border) !important;
     border-radius: 50px !important;
-    padding: 0.8rem 2rem !important;
+    padding: 0.5rem 1.5rem !important;
     box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+    display: flex;
+    align-items: center;
 }
 .nav-container {
     display: flex;
@@ -179,10 +181,10 @@ site-header {
     margin-right: 5%;
 }
 .hero-content h1, .service-hero-content h1 {
-    font-size: clamp(3rem, 5vw, 4.5rem) !important;
+    font-size: clamp(2.2rem, 4vw, 3.5rem) !important;
     font-weight: 800 !important;
     color: var(--white) !important;
-    line-height: 1.2 !important;
+    line-height: 1.5 !important;
     margin-bottom: 1.5rem !important;
 }
 .hero-content p, .service-hero-content p {
@@ -190,6 +192,8 @@ site-header {
     color: rgba(247, 244, 239, 0.9) !important;
     margin-bottom: 3rem !important;
     line-height: 1.8 !important;
+    max-width: 600px;
+    margin-inline: auto;
 }
 .hero-buttons, .service-hero-buttons {
     display: flex;
@@ -618,14 +622,18 @@ site-header {
     color: var(--dark);
     margin-bottom: 3rem;
     position: relative;
-    display: inline-block;
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    text-align: center;
 }
 /* Vertical or Horizontal Accent */
 .container h2::after {
     content: '';
     position: absolute;
     bottom: -15px;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 60px;
     height: 4px;
     background: var(--gold);
@@ -765,7 +773,7 @@ site-header {
     -webkit-backdrop-filter: blur(10px) !important;
     background: rgba(255,255,255,0.1) !important;
     border: 1px solid rgba(255,255,255,0.3) !important;
-    border-radius: 30px !important;
+    border-radius: 50px !important;
     color: var(--white) !important;
     text-decoration: none;
     display: inline-block;
@@ -799,11 +807,11 @@ site-header {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(37,34,31,0.5);
+    background: rgba(37,34,31,0.4);
     transition: var(--transition);
 }
 .premium-feature-card:hover::before {
-    background: rgba(37,34,31,0.7);
+    background: rgba(37,34,31,0.6);
 }
 .premium-feature-card h3 {
     position: relative;
@@ -1024,17 +1032,20 @@ site-header {
 .latest-work-header {
     display: flex !important;
     justify-content: space-between !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     margin-bottom: 3rem !important;
     flex-wrap: wrap !important;
     gap: 1.5rem !important;
 }
 .latest-work-header .lw-heading h2 {
     margin-bottom: 0.5rem !important;
+    text-align: right !important;
 }
 .latest-work-header .lw-heading p {
     color: #666 !important;
     max-width: 600px !important;
+    margin: 0 !important;
+    text-align: right !important;
 }
 .btn-outline-dark {
     padding: 0.8rem 1.8rem !important;
@@ -1046,10 +1057,24 @@ site-header {
     align-items: center !important;
     gap: 0.5rem !important;
     transition: var(--transition) !important;
+    white-space: nowrap !important;
 }
 .btn-outline-dark:hover {
     background: var(--dark) !important;
     color: var(--white) !important;
+}
+@media (max-width: 768px) {
+    .latest-work-header {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    .latest-work-header .lw-heading h2,
+    .latest-work-header .lw-heading p {
+        text-align: center !important;
+    }
+    .latest-work-header .lw-heading p {
+        margin: 0 auto !important;
+    }
 }
 
 /* 5. Fix Glass Buttons text alignment */
@@ -1204,4 +1229,459 @@ h3 {
 }
 .hero-description {
     max-width: 600px !important;
+}
+
+/* Make floating contact buttons circular */
+.floating-contact-lux .float-btn-lux { width: 50px !important; height: 50px !important; padding: 0 !important; border-radius: 50% !important; display: flex !important; justify-content: center !important; align-items: center !important; }
+
+/* ==========================================================================
+   MOBILE RESPONSIVE HEADER FIXES
+   ========================================================================== */
+.premium-header {
+    width: 100%;
+    z-index: 1000;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.nav-menu ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+.nav-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+@media (max-width: 992px) {
+    .nav-toggle {
+        display: flex;
+    }
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        display: none;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .btn-nav-cta {
+        display: none; /* Hide on mobile to save space, or style it properly */
+    }
+}
+
+/* ==========================================================================
+   KEYWORD PILLS FIX (Removed # links)
+   ========================================================================== */
+.keyword-pill {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: var(--white);
+    font-size: 0.85rem;
+    margin: 0.25rem;
+    cursor: default;
+}
+
+/* ==========================================================================
+   FINAL FIXES
+   ========================================================================== */
+
+/* 1. Solid Button for Expertise Cards (White Background) */
+.btn-solid {
+    background: var(--accent-color) !important;
+    color: var(--white) !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 50px !important;
+    font-size: 1rem !important;
+    text-decoration: none;
+    transition: var(--transition) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.btn-solid:hover {
+    background: var(--secondary-color) !important;
+    transform: translateY(-2px);
+}
+
+/* 2. Why Choose Us Layout Fix */
+.premium-feature-card {
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+}
+.feature-card-bg-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(37, 34, 31, 0.85); /* Dark background for contrast */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    text-align: right; /* Ensure full Arabic text doesn't get clipped */
+}
+.feature-card-bg-overlay p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* 3. Explore Section Redesign (Glassmorphism) */
+.premium-explore-section {
+    background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80') center/cover no-repeat fixed !important;
+    position: relative;
+    padding: 6rem 0;
+}
+.premium-explore-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(37, 34, 31, 0.4);
+    backdrop-filter: blur(5px);
+}
+.premium-explore-section .container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.premium-explore-section h2 {
+    color: var(--white);
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Explore Cloud Pills */
+.premium-explore-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.premium-explore-cloud a {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: var(--white) !important;
+    padding: 0.6rem 1.5rem !important;
+    border-radius: 50px !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.premium-explore-cloud a:hover {
+    background: var(--accent-color) !important;
+    color: var(--primary-color) !important;
+    border-color: var(--accent-color) !important;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Fix mobile menu padding */
+@media (max-width: 992px) {
+    .nav-container { padding: 0 1rem; }
+    .premium-header { padding: 1rem 0; }
+}
+
+/* ==========================================================================
+   BUTTON COLORS (Harmonious, Not Black)
+   ========================================================================== */
+.btn-outline-dark {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 50px !important;
+    font-size: 1rem !important;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--accent-color) !important;
+    color: var(--primary-color) !important; /* Dark text for contrast */
+    background: transparent !important;
+    transition: var(--transition) !important;
+}
+.btn-outline-dark:hover {
+    background: var(--accent-color) !important;
+    color: var(--white) !important;
+}
+
+.btn-solid {
+    background: var(--accent-color) !important; /* Gold */
+    color: var(--white) !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 50px !important;
+    font-size: 1rem !important;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition) !important;
+    box-shadow: 0 4px 15px rgba(200, 176, 138, 0.4);
+}
+.btn-solid:hover {
+    background: var(--secondary-color) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(200, 176, 138, 0.6);
+}
+
+/* Ensure original premium buttons use gold too if not glass */
+.btn-premium:not(.glass-btn) {
+    background: var(--accent-color) !important;
+    color: var(--white) !important;
+    border: none !important;
+}
+.btn-premium:not(.glass-btn):hover {
+    background: var(--secondary-color) !important;
+}
+/* ==========================================================================
+   URGENT LAYOUT FIXES (Phase 3)
+   ========================================================================== */
+
+/* 1. Mobile Header Forced Fix */
+@media (max-width: 992px) {
+    .nav-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: var(--primary-color, #25221F) !important;
+        display: none !important;
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+        transition: none !important;
+        z-index: 1000 !important;
+    }
+    .nav-menu.active {
+        display: flex !important;
+    }
+    .nav-menu ul {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+    }
+    .nav-menu a {
+        color: var(--white) !important;
+        font-size: 1.2rem !important;
+    }
+    .nav-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 1001 !important;
+    }
+    .nav-toggle span {
+        display: block !important;
+        width: 30px !important;
+        height: 3px !important;
+        background: var(--white) !important;
+        border-radius: 3px !important;
+    }
+    .nav-actions .btn-nav-cta {
+        display: none !important;
+    }
+}
+
+/* 2. Fix Why Choose Us Overlay (Make it transparent gradient, not black block) */
+.premium-feature-card {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 0 !important; /* Image goes to edges */
+    min-height: 450px !important;
+    overflow: hidden !important;
+}
+.feature-card-bg-overlay {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 2.5rem 2rem 2rem 2rem !important;
+    background: linear-gradient(to top, rgba(37,34,31, 0.95) 0%, rgba(37,34,31, 0.5) 60%, transparent 100%) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 0 16px 16px !important;
+}
+
+/* 3. Services Card Fix for Internal Pages (White Cards, Clear Images) */
+.editorial-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    margin-top: 2rem !important;
+}
+.service-card {
+    background: var(--white) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.service-card .service-image {
+    display: block !important;
+    width: 100% !important;
+}
+.service-card .service-image img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    border-bottom: 4px solid var(--accent-color) !important;
+    display: block !important;
+}
+.service-card .editorial-content {
+    padding: 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* RTL right */
+    flex-grow: 1 !important;
+    text-align: right !important;
+    background: var(--white) !important;
+}
+.service-card h3 {
+    color: var(--primary-color) !important;
+    margin-bottom: 1rem !important;
+    font-size: 1.4rem !important;
+}
+.service-card p {
+    color: var(--text-color) !important;
+    margin-bottom: 1.5rem !important;
+    flex-grow: 1 !important;
+    line-height: 1.6 !important;
+}
+
+/* 4. Center Latest Work Header & Button */
+.latest-work-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+}
+.latest-work-cta {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 3rem !important;
+    width: 100% !important;
+}
+
+/* ==========================================================================
+   FINAL OVERRIDES (Phase 4)
+   ========================================================================== */
+
+/* Fix Hero Header on Mobile: Force relative positioning and normal padding */
+.premium-header {
+    position: relative !important;
+}
+
+@media (max-width: 992px) {
+    .premium-header {
+        padding: 10px 20px !important;
+        border-radius: 20px !important;
+    }
+    .nav-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #25221F !important;
+        border-radius: 20px !important;
+        padding: 20px !important;
+        display: none !important;
+        flex-direction: column !important;
+        z-index: 9999 !important;
+        margin-top: 10px !important;
+    }
+    .nav-menu.active {
+        display: flex !important;
+    }
+    .hero {
+        padding-top: 120px !important; /* Ensure content clears header */
+    }
+}
+
+/* Fix "Why Choose Us" text size and layout */
+.feature-card-bg-overlay h3 {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem !important;
+}
+.feature-card-bg-overlay p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+}
+.premium-feature-card {
+    min-height: 400px !important;
+}
+
+/* Center Latest Work Content */
+.latest-work-header {
+    text-align: center !important;
+    align-items: center !important;
+    margin: 0 auto 3rem auto !important;
+    max-width: 800px !important;
+}
+.latest-work-cta {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+}
+.latest-work-cta a {
+    margin: 0 auto !important;
+}
+
+/* Back Home Button wrapper centering */
+.back-home-btn-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 40px 0 !important;
 }

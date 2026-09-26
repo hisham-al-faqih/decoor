@@ -14,6 +14,165 @@ const SiteConfig = {
 class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
+        <style>
+          /* ====== تنسيقات الهيدر الأساسية ====== */
+          .premium-header {
+            width: 100%;
+            max-width: 1100px;
+            background: rgba(37, 34, 31, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(200, 176, 138, 0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+          }
+          .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+          }
+          .logo img {
+            height: 45px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+          }
+          .nav-menu ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+          }
+          .nav-menu ul li a {
+            color: #F7F4EF;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+          }
+          .nav-menu ul li a:hover {
+            color: #C8B08A;
+          }
+          .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+          .btn-nav-cta {
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+          }
+          .btn-nav-cta:hover {
+            background: #C8B08A;
+            border-color: #C8B08A;
+          }
+          .nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            padding: 5px;
+          }
+          .nav-toggle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #F7F4EF;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+          }
+
+          /* ====== التجاوب مع الهواتف ====== */
+          @media (max-width: 992px) {
+            .nav-toggle {
+              display: flex;
+            }
+            .nav-menu {
+              position: absolute;
+              top: 100%;
+              left: 0;
+              width: 100%;
+              background: #25221F;
+              flex-direction: column;
+              display: none;
+              padding: 1.5rem 1rem;
+              border-radius: 20px;
+              margin-top: 10px;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+              box-sizing: border-box;
+              z-index: 999;
+            }
+            .nav-menu.active {
+              display: flex;
+            }
+            .nav-menu ul {
+              flex-direction: column;
+              gap: 1rem;
+              align-items: center;
+              width: 100%;
+            }
+            .nav-menu ul li {
+              width: 100%;
+              text-align: center;
+            }
+            .nav-menu ul li a {
+              display: block;
+              padding: 0.6rem 0;
+              font-size: 1.1rem;
+            }
+            .btn-nav-cta {
+              display: none;
+            }
+          }
+          @media (max-width: 768px) {
+            .premium-header {
+              padding: 0.4rem 1rem;
+              border-radius: 40px;
+            }
+            .logo img {
+              height: 35px;
+            }
+          }
+
+          /* ====== تنسيقات site-header ====== */
+          site-header {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 0 15px;
+            box-sizing: border-box;
+          }
+          @media (max-width: 768px) {
+            site-header {
+              top: 10px;
+              padding: 0 10px;
+            }
+          }
+        </style>
+
         <header class="premium-header">
             <div class="nav-container">
                 <a href="index.html" class="logo" aria-label="الرئيسية">
@@ -27,10 +186,12 @@ class SiteHeader extends HTMLElement {
                         <li><a href="index.html#projects">أعمالنا</a></li>
                     </ul>
                 </nav>
-                <div style="display: flex; gap: 1rem; align-items: center;">
+                <div class="nav-actions">
                     <a href="${SiteConfig.whatsapp}" class="btn-nav-cta" target="_blank">تواصل معنا</a>
                     <button class="nav-toggle" aria-label="القائمة">
-                        <span></span><span></span><span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
                 </div>
             </div>
