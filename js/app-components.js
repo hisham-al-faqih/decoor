@@ -264,7 +264,7 @@ class SiteFooter extends HTMLElement {
                     <p>جميع الحقوق محفوظة &copy; ${new Date().getFullYear()} | ${SiteConfig.name}</p>
                     <p class="developer">
                         <a href="${SiteConfig.developer.instagram}" target="_blank" rel="noopener" style="text-decoration: none; display: flex; align-items: center; gap: 8px; justify-content: center;">
-                            <img src="images/logo.webp" alt="ومضة سوفت" style="height: 24px; filter: brightness(0) invert(1);"> تصميم وتطوير: ${SiteConfig.developer.name}
+                            <img src="images/ws.webp" alt="ومضة سوفت" style="height: 24px; filter: brightness(0) invert(1);"> برمجة وتطوير: ${SiteConfig.developer.name}
                         </a>
                     </p>
                 </div>
