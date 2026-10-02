@@ -1,40 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://riya-decor.vercel.app/chipboard.html</loc>
-  </url>
-  <url>
-    <loc>https://riya-decor.vercel.app/dakhiliya.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://riya-decor.vercel.app/fome.html</loc>
-  </url>
-  <url>
-    <loc>https://riya-decor.vercel.app/gypsum.html</loc>
-  </url>
+
   <url>
     <loc>https://riya-decor.vercel.app/</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
+
+  <url>
+    <loc>https://riya-decor.vercel.app/chipboard.html</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+
+  <url>
+    <loc>https://riya-decor.vercel.app/dakhiliya.html</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+
+  <url>
+    <loc>https://riya-decor.vercel.app/fome.html</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+
+  <url>
+    <loc>https://riya-decor.vercel.app/gypsum.html</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+
   <url>
     <loc>https://riya-decor.vercel.app/khariijiya.html</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
+
   <url>
     <loc>https://riya-decor.vercel.app/marble.html</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
+
   <url>
     <loc>https://riya-decor.vercel.app/mirror.html</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
+
   <url>
     <loc>https://riya-decor.vercel.app/renovation.html</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
+
   <url>
     <loc>https://riya-decor.vercel.app/roof.html</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
+
   <url>
     <loc>https://riya-decor.vercel.app/wallpaper.html</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
+
   <url>
     <loc>https://riya-decor.vercel.app/wood.html</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
-</urlset>
+
+</urlset> 
