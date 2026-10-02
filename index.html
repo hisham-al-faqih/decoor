@@ -40,7 +40,7 @@
 <style>:not(:defined) { visibility: hidden; }</style>
 <link rel="stylesheet" href="css/fonts.css" />
 <link rel="stylesheet" href="css/style.css?v=1790730779088" />
-<link rel="stylesheet" href="css/premium.css?v=1790752291159" />
+<link rel="stylesheet" href="css/premium.css?v=1790743120486" />
 
 <!-- ========== تنسيقات إصلاح إضافية ========== -->
 <style>
@@ -442,6 +442,16 @@
     transform: translateY(-2px) !important;
     box-shadow: 0 6px 20px rgba(200, 176, 138, 0.6) !important;
   }
+  .hero-content h1, .service-hero-content h1 {
+    font-size: clamp(2rem, 3.5vw, 3rem) !important; /* تقليل الحد الأقصى قليلاً ليناسب شاشات الكمبيوتر */
+    font-weight: 800 !important;
+    color: var(--white) !important;
+    line-height: 1.4 !important; /* تقليل الارتفاع ليصبح متناسقاً جداً مع الخطوط العربية الفاخرة */
+    margin-bottom: 1.5rem !important;
+    white-space: normal !important; /* يجبر النص على النزول لسطر جديد تلقائياً وعدم الفرد الأفقي */
+    max-width: 650px; /* يمنع السطر الواحد من أن يصبح طويلاً جداً ويخرب التصميم على الكمبيوتر */
+}
+
 </style>
 <script src="js/app-components.js" defer></script>
 </head>
@@ -531,7 +541,7 @@
 <h2 style="text-align: center; display: block; margin: 0 auto 3rem auto; width: max-content;">خدماتنا</h2>
 <div class="editorial-grid">
 <div class="editorial-card">
-<div class="editorial-image"><img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=800&q=80" alt="دهانات داخلية احترافية لغرف معيشة بالرياض" width="400" height="250" loading="lazy" /></div>
+<div class="editorial-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi7-0JxOKV1cMoj11g-TrXYm5fkYXf-vNGWW6xwxwYzA&s=10" alt="دهانات داخلية احترافية لغرف معيشة بالرياض" width="400" height="250" loading="lazy" /></div>
 <div class="editorial-content">
 <h3>دهانات داخلية فاخرة</h3>
 <p>نحول جدران منزلك إلى لوحات فنية تعكس ذوقك الرفيع بجودة وتشطيب مثالي مع معلم دهان محترف.</p>
