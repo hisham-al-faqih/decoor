@@ -1,6 +1,7 @@
 export const SiteConfig = {
     name: "ديكورات ودهانات الرياض",
-    phone: "0551614831",
+    phone: "0554595628",
+  phone2: "0547465053",
     whatsapp: "https://wa.me/message/FSOKLLTRT4R2E1",
     instagram: "https://www.instagram.com/pillarsksa",
     snapchat: "https://www.snapchat.com/add/amd2400",
