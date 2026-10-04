@@ -21,12 +21,13 @@ class SiteHeader extends HTMLElement {
                     <img src="images/logo.webp" alt="${SiteConfig.name}">
                 </a>
                 <nav class="nav-menu" id="mainNavMenu">
-                    <ul>
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="index.html#services">خدماتنا</a></li>
-                        <li><a href="index.html#why-us">لماذا نحن</a></li>
-                        <li><a href="index.html#projects">أعمالنا</a></li>
-                    </ul>
+                  <ul>
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="index.html#services">خدماتنا</a></li>
+    <li><a href="index.html#why-us">لماذا نحن</a></li>
+    <li><a href="index.html#projects">أعمالنا</a></li>
+    
+</ul>
                 </nav>
                 <div class="nav-actions">
                     <a href="javascript:void(0)" class="btn-nav-cta" onclick="window.openContactPopup(event)">تواصل معنا</a>
@@ -142,9 +143,18 @@ class SiteHeader extends HTMLElement {
 
           /* ====== التجاوب مع الهواتف ====== */
           @media (max-width: 992px) {
+
             .nav-toggle {
               display: flex !important;
             }
+              .btn-nav-cta {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
             .nav-menu {
               position: absolute !important;
               top: 100% !important;
@@ -184,9 +194,7 @@ class SiteHeader extends HTMLElement {
               color: #F7F4EF !important;
               text-decoration: none !important;
             }
-            .btn-nav-cta {
-              display: none !important;
-            }
+            
           }
           @media (max-width: 768px) {
             .premium-header {
@@ -272,7 +280,11 @@ class SiteFooter extends HTMLElement {
                     </div>
                     <div class="footer-section">
                         <h3>تواصل معنا</h3>
-                        <p><a href="tel:${SiteConfig.phone}" dir="ltr" style="text-decoration: none;">${SiteConfig.phone}</a> - <a href="tel:${SiteConfig.phone2}" dir="ltr" style="text-decoration: none;">${SiteConfig.phone2}</a></p>
+<p>
+  <a href="tel:${SiteConfig.phone}" dir="ltr" style="text-decoration: none;">
+    ${SiteConfig.phone}
+  </a>
+</p>
                         <p>الرياض، المملكة العربية السعودية</p>
                     </div>
                     <div class="footer-section">

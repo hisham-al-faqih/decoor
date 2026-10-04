@@ -1523,9 +1523,6 @@ h3 {
         background: var(--white) !important;
         border-radius: 3px !important;
     }
-    .nav-actions .btn-nav-cta {
-        display: none !important;
-    }
 }
 
 /* 2. Fix Why Choose Us Overlay (Make it transparent gradient, not black block) */
@@ -1862,9 +1859,6 @@ h3 {
     }
     
     /* --- 8. Hide redundant elements --- */
-    .nav-actions .btn-nav-cta {
-        display: none !important;
-    }
 }
 
 
