@@ -79,11 +79,15 @@ class SiteFooter extends HTMLElement {
                 </div>
                 <div class="footer-bottom">
                     <p>جميع الحقوق محفوظة &copy; ${new Date().getFullYear()} | ${SiteConfig.name}</p>
-                    <p class="developer">
+                    <div class="developer" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                         <a href="${SiteConfig.developer.instagram}" target="_blank" rel="noopener" style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
                             <img src="images/logo.webp" alt="ومضة سوفت" style="height: 24px; filter: brightness(0) invert(1);"> تصميم وتطوير: ${SiteConfig.developer.name}
                         </a>
-                    </p>
+                        <span style="opacity: 0.4;">|</span>
+                        <a href="${SiteConfig.developer.whatsapp}" target="_blank" rel="noopener" style="text-decoration: none; display: flex; align-items: center; gap: 6px;" aria-label="واتساب فريق ومضة سوفت">
+                            <span dir="ltr">${SiteConfig.developer.phone}</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
