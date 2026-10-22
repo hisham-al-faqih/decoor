@@ -5,18 +5,18 @@
  */
 
 :root {
-    --gold: #C8B08A;
-    --dark: #25221F;
+    --gold: #B59A74;
+    --dark: #2D2C2A;
     --offwhite: #F7F4EF;
     --white: #FFFFFF;
-    --text-dark: #333333;
+    --text-dark: #2D2C2A;
     --text-muted: #666666;
     
     /* Premium Glassmorphism */
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-bg-dark: rgba(37, 34, 31, 0.7);
     --glass-border: 1px solid rgba(255, 255, 255, 0.4);
-    --glass-border-gold: 1px solid rgba(200, 176, 138, 0.3);
+    --glass-border-gold: 1px solid rgba(181, 154, 116, 0.3);
     --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     --glass-blur: blur(12px);
     
@@ -39,10 +39,10 @@ body {
    BUTTONS (Frosted Glass)
    ========================================================================== */
 .btn-premium, .hero-btn, .whatsapp-btn, .phone-btn, .btn-nav-cta {
-    background: rgba(200, 176, 138, 0.15) !important;
+    background: rgba(181, 154, 116, 0.15) !important;
     backdrop-filter: var(--glass-blur) !important;
     -webkit-backdrop-filter: var(--glass-blur) !important;
-    border: 1px solid rgba(200, 176, 138, 0.5) !important;
+    border: 1px solid rgba(181, 154, 116, 0.5) !important;
     color: var(--dark) !important;
     border-radius: 50px !important; /* Pill shape like reference */
     padding: 0.8rem 2rem !important;
@@ -190,7 +190,7 @@ site-header {
 .expertise-icon, .feature-icon {
     width: 60px !important;
     height: 60px !important;
-    background: rgba(200, 176, 138, 0.15) !important;
+    background: rgba(181, 154, 116, 0.15) !important;
     color: var(--gold) !important;
     border-radius: 50% !important;
     display: flex;
@@ -229,7 +229,7 @@ site-header {
 }
 .service-card:hover {
     transform: translateY(-10px) !important;
-    box-shadow: 0 15px 40px rgba(200, 176, 138, 0.15) !important;
+    box-shadow: 0 15px 40px rgba(181, 154, 116, 0.15) !important;
 }
 .service-card-image {
     width: 100%;
@@ -488,7 +488,7 @@ site-header {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top right, rgba(200, 176, 138, 0.1), transparent 50%);
+    background: radial-gradient(circle at top right, rgba(181, 154, 116, 0.1), transparent 50%);
 }
 .footer-content {
     display: grid !important;
@@ -574,7 +574,7 @@ site-header {
     background: rgba(37, 211, 102, 0.85) !important;
 }
 .float-btn-lux.phone {
-    background: rgba(200, 176, 138, 0.85) !important;
+    background: rgba(181, 154, 116, 0.85) !important;
 }
 .float-btn-lux svg {
     width: 28px !important;

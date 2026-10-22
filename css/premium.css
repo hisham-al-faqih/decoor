@@ -5,8 +5,8 @@
  */
 
 :root {
-    --gold: #C8B08A;
-    --dark: #25221F;
+    --gold: #B59A74;
+    --dark: #2D2C2A;
     --offwhite: #F7F4EF;
     --white: #F7F4EF;
     
@@ -18,7 +18,7 @@
     
     /* Dark Glass System */
     --glass-dark-bg: rgba(37, 34, 31, 0.6);
-    --glass-dark-border: rgba(200, 176, 138, 0.3);
+    --glass-dark-border: rgba(181, 154, 116, 0.3);
     
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -661,14 +661,14 @@ site-header {
     content: '';
     position: absolute;
     top: 0; right: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, rgba(200, 176, 138, 0.1) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(181, 154, 116, 0.1) 0%, transparent 100%);
     opacity: 0;
     transition: var(--transition);
 }
 .premium-expertise-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    border-color: rgba(200, 176, 138, 0.3);
+    border-color: rgba(181, 154, 116, 0.3);
 }
 .premium-expertise-card:hover::before {
     opacity: 1;
@@ -921,7 +921,7 @@ site-header {
     transition: var(--transition);
 }
 .faq-item:hover {
-    border-color: rgba(200,176,138,0.3) !important;
+    border-color: rgba(181, 154, 116,0.3) !important;
 }
 .faq-question {
     padding: 1.5rem 2rem !important;
@@ -1459,12 +1459,12 @@ h3 {
     font-weight: 600;
     text-decoration: none;
     transition: var(--transition) !important;
-    box-shadow: 0 4px 15px rgba(200, 176, 138, 0.4);
+    box-shadow: 0 4px 15px rgba(181, 154, 116, 0.4);
 }
 .btn-solid:hover {
     background: var(--secondary-color) !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(200, 176, 138, 0.6);
+    box-shadow: 0 6px 20px rgba(181, 154, 116, 0.6);
 }
 
 /* Ensure original premium buttons use gold too if not glass */
@@ -2408,7 +2408,7 @@ img, video, iframe, .container, section, .editorial-grid, .projects-grid, .stats
         background: rgba(26, 23, 20, 0.75) !important; /* Glass effect */
         backdrop-filter: blur(15px) !important;
         -webkit-backdrop-filter: blur(15px) !important;
-        border: 1px solid rgba(200, 176, 138, 0.3) !important; /* Light gold border */
+        border: 1px solid rgba(181, 154, 116, 0.3) !important; /* Light gold border */
         margin: 15px auto !important;
         width: 90% !important;
         max-width: 400px !important;
@@ -2541,7 +2541,7 @@ html, body {
     background: rgba(26, 23, 20, 0.75) !important;
     backdrop-filter: blur(15px) !important;
     -webkit-backdrop-filter: blur(15px) !important;
-    border: 1px solid rgba(200, 176, 138, 0.3) !important;
+    border: 1px solid rgba(181, 154, 116, 0.3) !important;
     margin: 15px auto !important;
     width: 90% !important;
     max-width: 1100px !important;

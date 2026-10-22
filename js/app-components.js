@@ -1,5 +1,5 @@
 const SiteConfig = {
-  name: "ديكورات ودهانات الرياض",
+  name: "القمة للدهانات والديكورات والترميمات",
   phone: "0554595628",
   phone2: "0547465053",
   whatsapp: "https://wa.me/966547465053",
@@ -47,7 +47,7 @@ class SiteHeader extends HTMLElement {
             background: rgba(37, 34, 31, 0.6);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(200, 176, 138, 0.3);
+            border: 1px solid rgba(181, 154, 116, 0.3);
             border-radius: 50px;
             padding: 0.5rem 1.5rem;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -78,7 +78,7 @@ class SiteHeader extends HTMLElement {
             align-items: center;
           }
           .nav-menu ul li a {
-            color: #F7F4EF;
+            color: #EAE7E0;
             text-decoration: none;
             font-size: 1rem;
             font-weight: 500;
@@ -86,7 +86,7 @@ class SiteHeader extends HTMLElement {
             white-space: nowrap;
           }
           .nav-menu ul li a:hover {
-            color: #C8B08A;
+            color: #B59A74;
           }
           .nav-actions {
             display: flex;
@@ -106,8 +106,8 @@ class SiteHeader extends HTMLElement {
             white-space: nowrap;
           }
           .btn-nav-cta:hover {
-            background: #C8B08A;
-            border-color: #C8B08A;
+            background: #B59A74;
+            border-color: #B59A74;
           }
           .nav-toggle {
             display: none;
@@ -122,7 +122,7 @@ class SiteHeader extends HTMLElement {
             display: block;
             width: 28px;
             height: 3px;
-            background: #F7F4EF;
+            background: #EAE7E0;
             border-radius: 3px;
             transition: all 0.3s ease;
           }
@@ -191,7 +191,7 @@ class SiteHeader extends HTMLElement {
               display: block !important;
               padding: 0.8rem 0 !important;
               font-size: 1.1rem !important;
-              color: #F7F4EF !important;
+              color: #EAE7E0 !important;
               text-decoration: none !important;
             }
             
@@ -350,7 +350,7 @@ class PhonePopup extends HTMLElement {
           transform: scale(0.9); transition: transform 0.3s ease;
         }
         .phone-popup-overlay.show .phone-popup-content { transform: scale(1); }
-        .phone-popup-title { margin: 0 0 16px 0; font-size: 1.2rem; color: #333; font-weight: bold; }
+        .phone-popup-title { margin: 0 0 16px 0; font-size: 1.2rem; color: #2D2C2A; font-weight: bold; }
         .phone-popup-btn {
           display: flex; align-items: center; justify-content: center; gap: 12px;
           background: #f8f9fa; border: 2px solid #eaeaea; color: #333;
@@ -358,7 +358,7 @@ class PhonePopup extends HTMLElement {
           text-decoration: none; font-size: 1.2rem; font-weight: bold;
           transition: all 0.2s ease; direction: ltr;
         }
-        .phone-popup-btn:hover { background: #eef2ff; border-color: #4f46e5; color: #4f46e5; }
+        .phone-popup-btn:hover { background: #F7F5F0; border-color: #B59A74; color: #B59A74; }
         .phone-popup-btn svg { width: 20px; height: 20px; fill: currentColor; }
         .phone-popup-close {
           background: none; border: none; color: #888; font-size: 0.9rem;
@@ -433,7 +433,7 @@ class ContactPopup extends HTMLElement {
           transform: scale(0.9); transition: transform 0.3s ease;
         }
         .contact-popup-overlay.show .contact-popup-content { transform: scale(1); }
-        .contact-popup-title { margin: 0 0 20px 0; font-size: 1.3rem; color: #333; font-weight: bold; }
+        .contact-popup-title { margin: 0 0 20px 0; font-size: 1.3rem; color: #2D2C2A; font-weight: bold; }
         .contact-popup-btn {
           display: flex; align-items: center; justify-content: flex-start; gap: 16px;
           background: #f8f9fa; border: 2px solid #eaeaea; color: #333;
@@ -441,7 +441,7 @@ class ContactPopup extends HTMLElement {
           text-decoration: none; font-size: 1.1rem; font-weight: bold;
           transition: all 0.2s ease; direction: ltr; text-align: left;
         }
-        .contact-popup-btn:hover { background: #eef2ff; border-color: #4f46e5; color: #4f46e5; }
+        .contact-popup-btn:hover { background: #F7F5F0; border-color: #B59A74; color: #B59A74; }
         
         /* WhatsApp specifically */
         .contact-popup-btn.btn-wa:hover { background: #e6f7ec; border-color: #25d366; color: #25d366; }

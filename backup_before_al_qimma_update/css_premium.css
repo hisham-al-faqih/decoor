@@ -1,0 +1,2650 @@
+/* 
+ * ==========================================================================
+ * TRUE PREMIUM UI/UX OVERRIDE - PHASE 2 (Header, Hero, Footer, Buttons)
+ * ==========================================================================
+ */
+
+:root {
+    --gold: #C8B08A;
+    --dark: #25221F;
+    --offwhite: #F7F4EF;
+    --white: #F7F4EF;
+    
+    /* Frosted Glass System */
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-blur: blur(16px);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    /* Dark Glass System */
+    --glass-dark-bg: rgba(37, 34, 31, 0.6);
+    --glass-dark-border: rgba(200, 176, 138, 0.3);
+    
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Fixes */
+html, body {
+    overflow-x: hidden;
+    background-color: var(--offwhite) !important;
+}
+
+/* ==========================================================================
+   FROSTED GLASS BUTTONS
+   ========================================================================== */
+.hero-btn, .btn-premium, .float-btn-lux {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem !important;
+    border-radius: 50px !important;
+    font-family: 'Tajawal', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    text-decoration: none !important;
+    transition: var(--transition) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    box-shadow: var(--glass-shadow) !important;
+    border: 1px solid var(--glass-border) !important;
+}
+
+/* Primary Hero Button (Dark/Gold Glass) */
+.hero-btn:first-child, .btn-primary-glass {
+    background: var(--glass-dark-bg) !important;
+    color: var(--white) !important;
+    border-color: var(--glass-dark-border) !important;
+}
+.hero-btn:first-child:hover, .btn-primary-glass:hover {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* Secondary Hero Button (Light Glass) */
+.hero-btn:last-child, .btn-secondary-glass {
+    background: var(--glass-bg) !important;
+    color: var(--white) !important;
+}
+.hero-btn:last-child:hover, .btn-secondary-glass:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* ==========================================================================
+   HEADER (Floating Pill)
+   ========================================================================== */
+site-header {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+.premium-header {
+    width: 100%;
+    max-width: 1100px;
+    background: var(--glass-dark-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border: 1px solid var(--glass-dark-border) !important;
+    border-radius: 50px !important;
+    padding: 0.5rem 1.5rem !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+    display: flex;
+    align-items: center;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.logo img {
+    height: 50px;
+    object-fit: contain;
+}
+.nav-menu ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0; padding: 0;
+}
+.nav-menu a {
+    color: var(--white) !important;
+    font-weight: 500 !important;
+    font-size: 1.05rem !important;
+    text-decoration: none;
+    transition: var(--transition);
+}
+.nav-menu a:hover {
+    color: var(--gold) !important;
+}
+.btn-nav-cta {
+    padding: 0.6rem 1.8rem !important;
+    border-radius: 50px !important;
+    background: var(--glass-bg) !important;
+    border: 1px solid var(--glass-border) !important;
+    color: var(--white) !important;
+    font-weight: 600 !important;
+}
+.btn-nav-cta:hover {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+}
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero, .service-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh !important;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    margin-top: 0 !important;
+    border-radius: 0 0 40px 40px !important;
+    overflow: hidden;
+}
+.hero-bg-image {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover !important;
+    object-position: center !important;
+    z-index: 0;
+}
+.hero::after, .service-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Warm dark overlay mimicking the reference */
+    background: linear-gradient(90deg, rgba(37,34,31,0.9) 0%, rgba(37,34,31,0.7) 40%, rgba(37,34,31,0.2) 100%) !important;
+    z-index: 1;
+}
+.hero-content, .service-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 5%;
+    margin-right: 5%;
+}
+.hero-content h1, .service-hero-content h1 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem) !important;
+    font-weight: 800 !important;
+    color: var(--white) !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+}
+.hero-content p, .service-hero-content p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem) !important;
+    color: rgba(247, 244, 239, 0.9) !important;
+    margin-bottom: 3rem !important;
+    line-height: 1.8 !important;
+    max-width: 600px;
+    margin-inline: auto;
+}
+.hero-buttons, .service-hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   FOOTER PREMIUM
+   ========================================================================== */
+.footer {
+    background: var(--dark) !important;
+    color: var(--offwhite) !important;
+    padding: 6rem 0 2rem !important;
+    margin-top: 4rem;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    position: relative;
+}
+.footer-content {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr !important;
+    gap: 3rem !important;
+}
+.footer h3 {
+    color: var(--white) !important;
+    font-size: 1.4rem !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 700;
+}
+.footer p, .footer a, .footer li {
+    color: rgba(247, 244, 239, 0.7) !important;
+    line-height: 1.8;
+}
+.footer a:hover {
+    color: var(--gold) !important;
+}
+.footer .social-icons a {
+    background: rgba(255,255,255,0.05) !important;
+    color: var(--white) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+}
+.footer .social-icons a:hover {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+}
+.map-container {
+    border-radius: 24px !important;
+    overflow: hidden;
+    height: 200px !important;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05) !important;
+    margin-top: 4rem !important;
+    padding-top: 2rem !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==========================================================================
+   FLOATING BUTTONS
+   ========================================================================== */
+.floating-contact-lux {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+.float-btn-lux {
+    width: 65px !important;
+    height: 65px !important;
+    padding: 0 !important;
+    color: var(--white) !important;
+}
+.float-btn-lux.whatsapp {
+    background: rgba(37, 211, 102, 0.6) !important;
+    border-color: rgba(37, 211, 102, 0.4) !important;
+}
+.float-btn-lux.whatsapp:hover {
+    background: rgba(37, 211, 102, 0.9) !important;
+}
+.float-btn-lux.phone {
+    background: var(--glass-dark-bg) !important;
+    border-color: var(--glass-dark-border) !important;
+}
+.float-btn-lux.phone:hover {
+    background: var(--gold) !important;
+}
+.float-btn-lux svg {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE - TABLET & MOBILE
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .premium-header {
+        max-width: 95%;
+    }
+    .footer-content {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+@media (max-width: 768px) {
+    .premium-header {
+        padding: 0.8rem 1.5rem !important;
+    }
+    .nav-menu {
+        display: none; /* We will use a toggle in app-components.js */
+    }
+    .nav-menu.active {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--dark) !important;
+        flex-direction: column;
+        padding: 2rem;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    .nav-toggle {
+        display: flex !important;
+        flex-direction: column;
+        gap: 6px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .nav-toggle span {
+        width: 30px; height: 3px;
+        background: var(--white);
+        border-radius: 3px;
+    }
+    .hero, .service-hero {
+        min-height: 80vh !important;
+        padding-top: 120px;
+    }
+    .hero-content, .service-hero-content {
+        margin-right: 0;
+        text-align: center;
+    }
+    .hero::after, .service-hero::after {
+        background: linear-gradient(180deg, rgba(37,34,31,0.5) 0%, rgba(37,34,31,0.9) 100%) !important;
+    }
+    .hero-buttons, .service-hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+    }
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    .floating-contact-lux {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+    }
+}
+
+/* ==========================================================================
+   STATS ROW (5 feature cards, under the hero)
+   ========================================================================== */
+.stats-row {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+}
+.stat-card {
+    background: var(--offwhite);
+    border: 1px solid rgba(37, 34, 31, 0.06);
+    border-radius: 20px;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    transition: var(--transition);
+}
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1.1rem;
+    border-radius: 16px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    color: var(--gold);
+}
+.stat-icon svg {
+    width: 24px;
+    height: 24px;
+}
+.stat-card h3 {
+    font-size: 1.05rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+.stat-card p {
+    font-size: 0.9rem;
+    color: #6b665f;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   LATEST WORK (asymmetric gallery)
+   ========================================================================== */
+.latest-work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap-reverse;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.latest-work-header .lw-heading {
+    text-align: right;
+}
+.latest-work-header .lw-heading h2 {
+    text-align: right;
+    margin-bottom: 0.5rem;
+}
+.latest-work-header .lw-heading h2::after {
+    display: none;
+}
+.latest-work-header .lw-heading p {
+    color: #6b665f;
+    max-width: 480px;
+    margin-bottom: 0;
+}
+.btn-outline-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 50px;
+    border: 1px solid rgba(37, 34, 31, 0.15);
+    color: var(--dark);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+.btn-outline-dark:hover {
+    background: var(--dark);
+    color: var(--white) !important;
+    border-color: var(--dark);
+}
+
+.latest-work-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr 1.1fr;
+    grid-template-rows: repeat(2, 220px);
+    gap: 1.5rem;
+}
+.lw-item {
+    position: relative;
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.lw-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.lw-item:hover img {
+    transform: scale(1.08);
+}
+.lw-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(37, 34, 31, 0.8) 0%,
+        rgba(37, 34, 31, 0.15) 45%,
+        rgba(37, 34, 31, 0) 70%
+    );
+}
+.lw-item .lw-label {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.5rem;
+    z-index: 2;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+.lw-item .lw-arrow {
+    position: absolute;
+    bottom: 1.1rem;
+    left: 1.25rem;
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+.latest-work-grid .lw-item:nth-child(1) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+.latest-work-grid .lw-item:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+.latest-work-grid .lw-item:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+}
+.latest-work-grid .lw-item:nth-child(4) {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+/* ==========================================================================
+   RESPONSIVE - STATS & LATEST WORK
+   ========================================================================== */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .latest-work-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 220px 220px;
+    }
+    .latest-work-grid .lw-item:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+    .latest-work-grid .lw-item:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .latest-work-grid .lw-item:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .latest-work-grid .lw-item:nth-child(4) {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+}
+@media (max-width: 768px) {
+    .latest-work-header {
+        text-align: center;
+    }
+    .latest-work-header .lw-heading {
+        text-align: center;
+        width: 100%;
+    }
+    .latest-work-header .lw-heading p {
+        margin: 0 auto;
+    }
+}
+@media (max-width: 576px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .latest-work-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 240px);
+    }
+    .latest-work-grid .lw-item:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .latest-work-grid .lw-item:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .latest-work-grid .lw-item:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .latest-work-grid .lw-item:nth-child(4) {
+        grid-column: 1;
+        grid-row: 4;
+    }
+}
+
+/* ==========================================================================
+   PHASE 3: HOMEPAGE PREMIUM SECTIONS
+   ========================================================================== */
+
+/* --- Typography & Basics --- */
+.section-padding {
+    padding: 6rem 0 !important;
+}
+.container h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 3rem;
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    text-align: center;
+}
+/* Vertical or Horizontal Accent */
+.container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+/* --- 1. Expertise Section (Glass Cards) --- */
+.premium-expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.premium-expertise-card {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+.premium-expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(200, 176, 138, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: var(--transition);
+}
+.premium-expertise-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: rgba(200, 176, 138, 0.3);
+}
+.premium-expertise-card:hover::before {
+    opacity: 1;
+}
+.premium-expertise-card svg, .premium-expertise-card i, .premium-expertise-card .feature-icon {
+    font-size: 3.5rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+.premium-expertise-card h3 {
+    font-size: 1.4rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.premium-expertise-card p {
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- 2. Editorial Services Grid (Image-First) --- */
+.editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 400px;
+    gap: 1.5rem;
+}
+/* Asymmetric Layout */
+.editorial-card:first-child {
+    grid-column: span 2;
+}
+@media (max-width: 992px) {
+    .editorial-grid { grid-template-columns: repeat(2, 1fr); }
+    .editorial-card:first-child { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+    .editorial-grid { grid-template-columns: 1fr; grid-auto-rows: 350px; }
+    .editorial-card:first-child { grid-column: span 1; }
+}
+
+.editorial-card {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.editorial-image {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+}
+.editorial-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.editorial-card:hover .editorial-image img {
+    transform: scale(1.08);
+}
+/* Warm Overlay */
+.editorial-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(37,34,31,0.95) 0%, rgba(37,34,31,0.4) 50%, transparent 100%);
+    pointer-events: none;
+}
+.editorial-content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+    width: 100%;
+    color: var(--white);
+    transform: translateY(10px);
+    transition: transform 0.4s ease;
+}
+.editorial-card:hover .editorial-content {
+    transform: translateY(0);
+}
+.editorial-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: var(--white);
+}
+.editorial-content p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.glass-btn {
+    padding: 0.6rem 1.5rem !important;
+    font-size: 0.95rem !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    background: rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    border-radius: 50px !important;
+    color: var(--white) !important;
+    text-decoration: none;
+    display: inline-block;
+    transition: var(--transition);
+}
+.glass-btn:hover {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: var(--white) !important;
+}
+
+/* --- 3. Premium Why Us (Feature Showcase) --- */
+.premium-why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.premium-feature-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    /* Inline background images exist on these divs from old code */
+    background-size: cover !important;
+    background-position: center !important;
+}
+.premium-feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(37,34,31,0.4);
+    transition: var(--transition);
+}
+.premium-feature-card:hover::before {
+    background: rgba(37,34,31,0.6);
+}
+.premium-feature-card h3 {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.premium-feature-card p {
+    position: relative;
+    z-index: 2;
+    color: rgba(255,255,255,0.85);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* --- 4. Portfolio (Latest Projects) --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+.portfolio-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+.portfolio-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(37,34,31,0.9) 0%, rgba(37,34,31,0.1) 100%);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+.portfolio-card:hover img {
+    transform: scale(1.05);
+}
+.portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+}
+.portfolio-info {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    width: 100%;
+}
+.portfolio-info h4 {
+    color: var(--white);
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+.portfolio-info p {
+    color: var(--gold);
+    font-size: 0.9rem;
+    margin: 0;
+}
+.portfolio-arrow {
+    position: absolute;
+    top: 2rem; left: 2rem; /* RTL so it's top left */
+    z-index: 2;
+    width: 45px; height: 45px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white);
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.portfolio-arrow svg {
+    width: 20px; height: 20px;
+    /* Since it's RTL, arrow points left */
+    transform: rotate(180deg); 
+}
+.portfolio-card:hover .portfolio-arrow {
+    transform: scale(1);
+}
+
+/* --- 5. FAQ (Compact Accordion) --- */
+.faq-section {
+    background: var(--white) !important;
+}
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.faq-item {
+    background: var(--offwhite) !important;
+    border: 1px solid rgba(0,0,0,0.03) !important;
+    border-radius: 16px !important;
+    box-shadow: none !important;
+    overflow: hidden;
+    transition: var(--transition);
+}
+.faq-item:hover {
+    border-color: rgba(200,176,138,0.3) !important;
+}
+.faq-question {
+    padding: 1.5rem 2rem !important;
+    font-size: 1.1rem !important;
+    color: var(--dark) !important;
+    font-weight: 700 !important;
+    position: relative;
+}
+.faq-question::after {
+    content: '+' !important;
+    font-family: inherit !important;
+    font-size: 1.5rem !important;
+    font-weight: 300 !important;
+    color: var(--gold) !important;
+    transform: none !important;
+    position: absolute;
+    left: 2rem;
+}
+.faq-item.active .faq-question::after {
+    content: '\2013' !important; /* Minus sign */
+}
+.faq-answer {
+    padding: 0 2rem !important;
+}
+.faq-answer p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* --- 6. Explore / Keywords (Glass Tags) --- */
+.premium-explore-section {
+    background: var(--dark) !important;
+}
+.premium-explore-section h2 {
+    color: var(--white) !important;
+    text-align: center;
+    width: 100%;
+}
+.premium-explore-section h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+}
+.premium-explore-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+.premium-explore-cloud a {
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: var(--white) !important;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+.premium-explore-cloud a:hover {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: var(--dark) !important;
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   UI FIXES (Based on visual feedback)
+   ========================================================================== */
+
+/* 1. Header Logo Size & Layout Fix */
+.premium-header .nav-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+.premium-header .logo img {
+    height: 45px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
+
+/* 2. Hero Title Constraints */
+.hero-title {
+    font-size: clamp(2rem, 3.5vw, 3rem) !important; /* Smaller and more manageable */
+    line-height: 1.4 !important;
+    font-weight: 800 !important;
+    margin-bottom: 1.5rem !important;
+    color: var(--white) !important;
+}
+.hero-description {
+    font-size: clamp(1rem, 1.2vw, 1.1rem) !important;
+    line-height: 1.8 !important;
+    color: rgba(255,255,255,0.9) !important;
+}
+
+/* 3. Missing Backgrounds (Why Us & Services without images) */
+.premium-feature-card, .editorial-card {
+    background-color: #2a2a2a !important; /* Fallback dark color */
+}
+
+/* 4. Fix "أحدث أعمالنا" Header Layout */
+.latest-work-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 3rem !important;
+    flex-wrap: wrap !important;
+    gap: 1.5rem !important;
+}
+.latest-work-header .lw-heading h2 {
+    margin-bottom: 0.5rem !important;
+    text-align: right !important;
+}
+.latest-work-header .lw-heading p {
+    color: #666 !important;
+    max-width: 600px !important;
+    margin: 0 !important;
+    text-align: right !important;
+}
+.btn-outline-dark {
+    padding: 0.8rem 1.8rem !important;
+    border: 1px solid var(--dark) !important;
+    border-radius: 50px !important;
+    color: var(--dark) !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    transition: var(--transition) !important;
+    white-space: nowrap !important;
+}
+.btn-outline-dark:hover {
+    background: var(--dark) !important;
+    color: var(--white) !important;
+}
+@media (max-width: 768px) {
+    .latest-work-header {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    .latest-work-header .lw-heading h2,
+    .latest-work-header .lw-heading p {
+        text-align: center !important;
+    }
+    .latest-work-header .lw-heading p {
+        margin: 0 auto !important;
+    }
+}
+
+/* 5. Fix Glass Buttons text alignment */
+.glass-btn, .btn-premium {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 1 !important;
+    padding: 1rem 1.8rem !important;
+}
+
+/* 6. Fix Typography globally so headings aren't monstrous */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4 !important;
+}
+
+/* 7. Explore Section Pills layout */
+.premium-explore-cloud {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    align-items: center !important;
+}
+.premium-explore-cloud a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+/* Ensure Header is correctly absolute and centered */
+site-header {
+    position: absolute !important;
+    top: 20px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 0 20px !important;
+}
+
+/* Header Nav Layout Fixes */
+.nav-menu ul {
+    display: flex !important;
+    gap: 2rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: center !important;
+}
+.nav-menu ul li a {
+    color: var(--white) !important;
+    text-decoration: none !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    transition: var(--transition) !important;
+}
+.nav-menu ul li a:hover {
+    color: var(--gold) !important;
+}
+@media (max-width: 992px) {
+    .nav-menu ul {
+        gap: 1rem !important;
+    }
+}
+@media (max-width: 768px) {
+    .nav-menu ul {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        align-items: flex-start !important;
+    }
+}
+
+/* Expertise List Fix */
+.premium-expertise-card ul {
+    list-style: none !important;
+    padding: 0 !important;
+    text-align: right !important;
+    margin: 1.5rem 0 2rem 0 !important;
+}
+.premium-expertise-card ul li {
+    margin-bottom: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.8rem !important;
+    font-size: 1rem !important;
+    color: #444 !important;
+}
+.premium-expertise-card ul li svg {
+    font-size: 1.2rem !important;
+    color: var(--gold) !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Fix Floating Contact padding issue */
+.float-btn-lux {
+    padding: 0 !important; /* Override the 1rem 2.5rem padding */
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.floating-contact-lux {
+    position: fixed !important;
+    bottom: 30px !important;
+    left: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    z-index: 9999 !important;
+}
+@media (max-width: 768px) {
+    .floating-contact-lux {
+        bottom: 20px !important;
+        left: 20px !important;
+    }
+    .float-btn-lux {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    .float-btn-lux svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+}
+
+/* Global Typography Safeguards */
+h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem) !important;
+    line-height: 1.3 !important;
+}
+h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem) !important;
+}
+.hero-content {
+    max-width: 800px !important;
+    margin: 0 auto !important; /* Center the content box if needed */
+    text-align: right !important; /* Keep RTL alignment */
+}
+@media (min-width: 992px) {
+    .hero-content {
+        margin-right: 5% !important; /* Push to the right like the reference image */
+        margin-left: auto !important;
+    }
+}
+.hero-description {
+    max-width: 600px !important;
+}
+
+/* Make floating contact buttons circular */
+.floating-contact-lux .float-btn-lux { width: 50px !important; height: 50px !important; padding: 0 !important; border-radius: 50% !important; display: flex !important; justify-content: center !important; align-items: center !important; }
+
+/* ==========================================================================
+   MOBILE RESPONSIVE HEADER FIXES
+   ========================================================================== */
+.premium-header {
+    width: 100%;
+    z-index: 1000;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.nav-menu ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+.nav-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+@media (max-width: 992px) {
+    .nav-toggle {
+        display: flex;
+    }
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        display: none;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .btn-nav-cta {
+        display: none; /* Hide on mobile to save space, or style it properly */
+    }
+}
+
+/* ==========================================================================
+   KEYWORD PILLS FIX (Removed # links)
+   ========================================================================== */
+.keyword-pill {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: var(--white);
+    font-size: 0.85rem;
+    margin: 0.25rem;
+    cursor: default;
+}
+
+/* ==========================================================================
+   FINAL FIXES
+   ========================================================================== */
+
+/* 1. Solid Button for Expertise Cards (White Background) */
+.btn-solid {
+    background: var(--accent-color) !important;
+    color: var(--white) !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 50px !important;
+    font-size: 1rem !important;
+    text-decoration: none;
+    transition: var(--transition) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.btn-solid:hover {
+    background: var(--secondary-color) !important;
+    transform: translateY(-2px);
+}
+
+/* 2. Why Choose Us Layout Fix */
+.premium-feature-card {
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+}
+.feature-card-bg-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(37, 34, 31, 0.85); /* Dark background for contrast */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    text-align: right; /* Ensure full Arabic text doesn't get clipped */
+}
+.feature-card-bg-overlay p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* 3. Explore Section Redesign (Glassmorphism) */
+.premium-explore-section {
+    background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80') center/cover no-repeat fixed !important;
+    position: relative;
+    padding: 6rem 0;
+}
+.premium-explore-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(37, 34, 31, 0.4);
+    backdrop-filter: blur(5px);
+}
+.premium-explore-section .container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.premium-explore-section h2 {
+    color: var(--white);
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Explore Cloud Pills */
+.premium-explore-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.premium-explore-cloud a {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: var(--white) !important;
+    padding: 0.6rem 1.5rem !important;
+    border-radius: 50px !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.premium-explore-cloud a:hover {
+    background: var(--accent-color) !important;
+    color: var(--primary-color) !important;
+    border-color: var(--accent-color) !important;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Fix mobile menu padding */
+@media (max-width: 992px) {
+    .nav-container { padding: 0 1rem; }
+    .premium-header { padding: 1rem 0; }
+}
+
+/* ==========================================================================
+   BUTTON COLORS (Harmonious, Not Black)
+   ========================================================================== */
+.btn-outline-dark {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 50px !important;
+    font-size: 1rem !important;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--accent-color) !important;
+    color: var(--primary-color) !important; /* Dark text for contrast */
+    background: transparent !important;
+    transition: var(--transition) !important;
+}
+.btn-outline-dark:hover {
+    background: var(--accent-color) !important;
+    color: var(--white) !important;
+}
+
+.btn-solid {
+    background: var(--accent-color) !important; /* Gold */
+    color: var(--white) !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 50px !important;
+    font-size: 1rem !important;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition) !important;
+    box-shadow: 0 4px 15px rgba(200, 176, 138, 0.4);
+}
+.btn-solid:hover {
+    background: var(--secondary-color) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(200, 176, 138, 0.6);
+}
+
+/* Ensure original premium buttons use gold too if not glass */
+.btn-premium:not(.glass-btn) {
+    background: var(--accent-color) !important;
+    color: var(--white) !important;
+    border: none !important;
+}
+.btn-premium:not(.glass-btn):hover {
+    background: var(--secondary-color) !important;
+}
+/* ==========================================================================
+   URGENT LAYOUT FIXES (Phase 3)
+   ========================================================================== */
+
+/* 1. Mobile Header Forced Fix */
+@media (max-width: 992px) {
+    .nav-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: var(--primary-color, #25221F) !important;
+        display: none !important;
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+        transition: none !important;
+        z-index: 1000 !important;
+    }
+    .nav-menu.active {
+        display: flex !important;
+    }
+    .nav-menu ul {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+    }
+    .nav-menu a {
+        color: var(--white) !important;
+        font-size: 1.2rem !important;
+    }
+    .nav-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 1001 !important;
+    }
+    .nav-toggle span {
+        display: block !important;
+        width: 30px !important;
+        height: 3px !important;
+        background: var(--white) !important;
+        border-radius: 3px !important;
+    }
+}
+
+/* 2. Fix Why Choose Us Overlay (Make it transparent gradient, not black block) */
+.premium-feature-card {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 0 !important; /* Image goes to edges */
+    min-height: 450px !important;
+    overflow: hidden !important;
+}
+.feature-card-bg-overlay {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 2.5rem 2rem 2rem 2rem !important;
+    background: linear-gradient(to top, rgba(37,34,31, 0.95) 0%, rgba(37,34,31, 0.5) 60%, transparent 100%) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 0 16px 16px !important;
+}
+
+/* 3. Services Card Fix for Internal Pages (White Cards, Clear Images) */
+.editorial-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    margin-top: 2rem !important;
+}
+.service-card {
+    background: var(--white) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.service-card .service-image {
+    display: block !important;
+    width: 100% !important;
+}
+.service-card .service-image img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    border-bottom: 4px solid var(--accent-color) !important;
+    display: block !important;
+}
+.service-card .editorial-content {
+    padding: 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* RTL right */
+    flex-grow: 1 !important;
+    text-align: right !important;
+    background: var(--white) !important;
+}
+.service-card h3 {
+    color: var(--primary-color) !important;
+    margin-bottom: 1rem !important;
+    font-size: 1.4rem !important;
+}
+.service-card p {
+    color: var(--text-color) !important;
+    margin-bottom: 1.5rem !important;
+    flex-grow: 1 !important;
+    line-height: 1.6 !important;
+}
+
+/* 4. Center Latest Work Header & Button */
+.latest-work-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+}
+.latest-work-cta {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 3rem !important;
+    width: 100% !important;
+}
+
+/* ==========================================================================
+   FINAL OVERRIDES (Phase 4)
+   ========================================================================== */
+
+/* Fix Hero Header on Mobile: Force relative positioning and normal padding */
+.premium-header {
+    position: relative !important;
+}
+
+@media (max-width: 992px) {
+    .premium-header {
+        padding: 10px 20px !important;
+        border-radius: 20px !important;
+    }
+    .nav-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #25221F !important;
+        border-radius: 20px !important;
+        padding: 20px !important;
+        display: none !important;
+        flex-direction: column !important;
+        z-index: 9999 !important;
+        margin-top: 10px !important;
+    }
+    .nav-menu.active {
+        display: flex !important;
+    }
+    .hero {
+        padding-top: 120px !important; /* Ensure content clears header */
+    }
+}
+
+/* Fix "Why Choose Us" text size and layout */
+.feature-card-bg-overlay h3 {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem !important;
+}
+.feature-card-bg-overlay p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+}
+.premium-feature-card {
+    min-height: 400px !important;
+}
+
+/* Center Latest Work Content */
+.latest-work-header {
+    text-align: center !important;
+    align-items: center !important;
+    margin: 0 auto 3rem auto !important;
+    max-width: 800px !important;
+}
+.latest-work-cta {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+}
+.latest-work-cta a {
+    margin: 0 auto !important;
+}
+
+/* Back Home Button wrapper centering */
+.back-home-btn-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 40px 0 !important;
+}
+
+/* ==========================================================================
+   ULTIMATE MOBILE RESPONSIVE RESET (Phase 5)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* --- 1. Header Reset --- */
+    site-header {
+        position: relative !important;
+        z-index: 1000 !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    .premium-header {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important; 
+        padding: 10px 15px !important;
+        margin: 0 !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+    }
+    .nav-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        flex-wrap: nowrap !important;
+        box-sizing: border-box !important;
+    }
+    .logo {
+        display: flex !important;
+        align-items: center !important;
+    }
+    .logo img {
+        max-height: 45px !important; 
+        width: auto !important;
+    }
+    .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+    }
+    .nav-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-around !important;
+        width: 32px !important;
+        height: 24px !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        cursor: pointer !important;
+    }
+    .nav-toggle span {
+        width: 100% !important;
+        height: 3px !important;
+        background-color: var(--white, #fff) !important;
+        border-radius: 3px !important;
+        display: block !important;
+    }
+    
+    /* --- 2. Mobile Menu Dropdown --- */
+    .nav-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background: var(--primary-color, #25221F) !important;
+        display: none !important; /* JS will override with .active */
+        flex-direction: column !important;
+        padding: 20px 0 !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5) !important;
+        border-top: 1px solid rgba(255,255,255,0.1) !important;
+        box-sizing: border-box !important;
+        border-radius: 0 0 15px 15px !important;
+    }
+    .nav-menu.active {
+        display: flex !important;
+    }
+    .nav-menu ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        align-items: center !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .nav-menu ul li {
+        width: 100% !important;
+        text-align: center !important;
+    }
+    .nav-menu ul li a {
+        display: block !important;
+        padding: 10px !important;
+        font-size: 1.1rem !important;
+    }
+
+    /* --- 3. Global Section Spacing --- */
+    .section-padding {
+        padding: 40px 0 !important; 
+    }
+    .premium-explore-section {
+        padding: 3rem 1rem !important;
+    }
+    .premium-explore-section .container {
+        padding: 2rem 1rem !important;
+    }
+
+    /* --- 4. Typography Scaling for Mobile --- */
+    h1 { font-size: 2rem !important; line-height: 1.3 !important; }
+    h2 { font-size: 1.6rem !important; line-height: 1.4 !important; }
+    h3 { font-size: 1.2rem !important; line-height: 1.4 !important; }
+    p { font-size: 0.95rem !important; line-height: 1.6 !important; }
+    
+    /* --- 5. Fix Overflows & Grids --- */
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+    .projects-grid, .editorial-grid, .services-grid, .expertise-grid, .projects-grid-new {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* --- 6. "Why Choose Us" Card Layout --- */
+    .premium-feature-card {
+        min-height: 280px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .feature-card-bg-overlay {
+        padding: 1.5rem 1rem 1rem 1rem !important;
+        background: linear-gradient(to top, rgba(37,34,31, 0.95) 0%, rgba(37,34,31, 0.7) 70%, transparent 100%) !important;
+    }
+    .feature-card-bg-overlay h3 {
+        font-size: 1.1rem !important;
+    }
+    .feature-card-bg-overlay p {
+        font-size: 0.85rem !important;
+    }
+
+    /* --- 7. Buttons --- */
+    .btn-premium, .btn-solid, .hero-btn, .btn-outline-dark {
+        padding: 0.7rem 1.2rem !important;
+        font-size: 0.95rem !important;
+    }
+    .hero-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 20px !important;
+    }
+    .hero-buttons a {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+    
+    /* --- 8. Hide redundant elements --- */
+}
+
+
+/* ==========================================================================
+   USER REQUESTED FIX: OUR SERVICES / EDITORIAL CARDS MOBILE FIX (FINAL)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* 1. Ensure the services grid behaves purely as single columns */
+    .editorial-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3rem !important;
+    }
+    .editorial-card:first-child {
+        grid-column: span 1 !important;
+    }
+
+    /* 2. Force the card to behave as a solid box with its original background */
+    .editorial-card {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important; /* Pushes text container to the very bottom */
+        height: 520px !important; /* Fixed robust height to showcase the background image */
+        border-radius: 24px !important;
+        overflow: hidden !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    /* 3. Handle the image container if it exists, force it to cover the top area */
+    .editorial-image {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 1 !important;
+    }
+    .editorial-image img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* 4. Turn off desktop destructive overlays on mobile */
+    .editorial-card::after {
+        content: '' !important;
+        position: absolute !important;
+        inset: 0 !important;
+        background: linear-gradient(to top, rgba(37,34,31,0.95) 0%, rgba(37,34,31,0.4) 60%, transparent 100%) !important;
+        z-index: 2 !important;
+        display: block !important;
+    }
+
+    /* 5. Force text container to float at the bottom cleanly over the shadow gradient */
+    .editorial-content {
+        position: relative !important;
+        z-index: 3 !important; /* Sit on top of everything */
+        width: 100% !important;
+        padding: 2rem 1.5rem !important;
+        background: transparent !important; /* No solid dark blocking on image */
+        box-sizing: border-box !important;
+        transform: none !important;
+        margin-top: auto !important; /* Snaps directly to bottom */
+        text-align: right !important;
+    }
+
+    /* 6. Fix text constraints so it fits mobile screens perfectly */
+    .editorial-content h3 {
+        font-size: 1.4rem !important;
+        font-weight: 800 !important;
+        color: #F7F4EF !important;
+        margin-bottom: 0.75rem !important;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
+    }
+
+    .editorial-content p {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        color: rgba(247, 244, 239, 0.9) !important;
+        margin-bottom: 1.5rem !important;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+        -webkit-line-clamp: 3 !important; /* Limit description so keywords don't get crushed */
+        display: -webkit-box !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    /* Center button for natural thumb reach on mobile */
+    .editorial-content .glass-btn {
+        display: inline-flex !important;
+        align-self: center !important;
+        margin-top: 0.5rem !important;
+    }
+}
+
+
+/* ==========================================================================
+   USER REQUESTED FIX: HERO & FLOATING BUTTONS MOBILE FIX
+   ========================================================================== */
+/* ==========================================
+   2. FLOATING CONTACT BUTTONS RESET (MOBILE)
+   ========================================== */
+@media (max-width: 992px) {
+    /* Push the bar to the absolute bottom left corner out of the content way */
+    .floating-contact-lux {
+        position: fixed !important;
+        bottom: 20px !important;
+        left: 20px !important;
+        right: auto !important;
+        display: flex !important;
+        flex-direction: column !important; /* Stack vertically so it doesn't block horizontal space */
+        gap: 10px !important;
+        z-index: 99999 !important;
+        transform: none !important;
+    }
+
+    /* Ensure icons are perfect clean circles */
+    .floating-contact-lux .float-btn-lux {
+        width: 50px !important;
+        height: 50px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+    }
+
+    .floating-contact-lux .float-btn-lux svg {
+        width: 22px !important;
+        height: 22px !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* ==========================================
+   1. HERO CONTAINER & TYPOGRAPHY RESET (MOBILE) (UPDATED)
+   ========================================== */
+@media (max-width: 992px) {
+    /* 1. Force Hero Section to expand naturally with its children */
+    .hero, .service-hero {
+        height: auto !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding-top: 120px !important;
+        padding-bottom: 60px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Break any absolute positioning or fixed height on the content container */
+    .hero-content, .service-hero-content {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        height: auto !important; /* Forces the box to expand naturally downwards */
+        min-height: unset !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 20px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Stabilize typography scales on mobile */
+    .hero-content h1, 
+    .service-hero-content h1, 
+    .hero-title, 
+    h1 {
+        font-size: 1.7rem !important; /* Perfect readable title size on mobile phones */
+        line-height: 1.5 !important;
+        margin-top: 0 !important;
+        margin-bottom: 1.25rem !important;
+        font-weight: 800 !important;
+        color: #F7F4EF !important;
+        text-align: center !important;
+        display: block !important;
+    }
+
+    .hero-content p, 
+    .service-hero-content p, 
+    .hero-description {
+        font-size: 0.95rem !important;
+        line-height: 1.7 !important;
+        margin-bottom: 2.5rem !important; /* Gives clear breathing room before buttons */
+        color: rgba(247, 244, 239, 0.95) !important;
+        text-align: center !important;
+        display: block !important;
+        height: auto !important; /* Ensure description doesn't have fixed heights */
+    }
+
+    /* 4. Force Buttons container to stack beneath the text perfectly */
+    .hero-buttons, .service-hero-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        position: relative !important;
+    }
+
+    .hero-buttons a, .service-hero-buttons a, .hero-btn {
+        width: 100% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0.9rem 1.5rem !important;
+        font-size: 1rem !important;
+        border-radius: 50px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+
+/* ==========================================================================
+   CLEAN FINAL FIXES: BUTTONS & HEADER MENU & SCROLL
+   ========================================================================== */
+/* 1. Global Horizontal Scroll Kill */
+html, body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box !important;
+}
+
+img, video, iframe, .container, section, .editorial-grid, .projects-grid, .stats-grid, .features-grid, .process-grid, .projects-grid-new, .services-grid, .expertise-grid {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 992px) {
+    /* 2. Header Mobile Offset (keep original colors) */
+    site-header {
+        position: absolute !important;
+        top: 20px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+        display: block !important;
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    .premium-header {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        /* Background remains its original glass color */
+        padding: 10px 20px !important;
+    }
+
+    /* Keep Nav Menu strictly inside without bleeding */
+    .nav-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        margin-top: 10px !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+    
+    .nav-menu ul {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Button Centering */
+    .hero-btn, .btn-premium, .btn-solid, .glass-btn, .hero-buttons a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        padding: 12px 20px !important;
+        gap: 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-btn svg, .btn-premium svg, .btn-solid svg, .glass-btn svg {
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+        display: block !important;
+    }
+}
+
+/* ==========================================================================
+   HERO GAP & BUTTON CENTERING OVERRIDE
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* 1. Fix Top and Right Gap */
+    .hero, .service-hero {
+        margin: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        overflow: hidden !important; /* Prevents background image shifting */
+    }
+    
+    .hero-bg-image {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important; /* RTL Critical */
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    .hero-content, .service-hero-content {
+        position: relative !important;
+        right: auto !important;
+        left: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: 0 !important;
+        padding: 0 15px !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Absolute Centering for Buttons */
+    .hero-btn, .btn-premium, .btn-solid, .glass-btn, .hero-buttons a, .service-hero-buttons a {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important; /* Center button block */
+        padding: 15px 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-btn span, .btn-premium span, .btn-solid span, .glass-btn span {
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-grow: 0 !important; /* Do not stretch */
+        text-align: center !important;
+        line-height: 1 !important;
+    }
+
+    .hero-btn svg, .btn-premium svg, .btn-solid svg, .glass-btn svg {
+        margin: 0 !important;
+        margin-inline-end: 10px !important; /* Consistent RTL spacing */
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* ==========================================================================
+   USER REQUESTED FIX: GAP AND BUTTON CENTERING
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* 1. Remove Top and Right gap in Hero */
+    .hero-content, .service-hero-content {
+        position: relative !important;
+        right: auto !important;
+        left: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+    }
+
+    /* 2. Absolutely Center Buttons Content */
+    .hero-btn, .btn-premium, .btn-solid, .glass-btn, .hero-buttons a, .service-hero-buttons a {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+        padding: 15px 20px !important;
+        box-sizing: border-box !important;
+        gap: 8px !important;
+    }
+
+    .hero-btn span, .btn-premium span, .btn-solid span, .glass-btn span {
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-grow: 0 !important;
+        flex-shrink: 0 !important;
+        width: auto !important;
+        text-align: center !important;
+        line-height: 1 !important;
+    }
+
+    .hero-btn svg, .btn-premium svg, .btn-solid svg, .glass-btn svg {
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+        display: block !important;
+    }
+}
+
+/* ==========================================================================
+   NUCLEAR FIX: BUTTON CENTERING AND RIGHT GAP
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* 1. Kill Body/Html Right Gap Completely */
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative !important;
+    }
+    
+    .hero, .service-hero {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        overflow: hidden !important; /* Prevents background overflow */
+    }
+
+    .hero-bg-image {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important; /* Force full viewport width */
+        max-width: 100% !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    .hero-content, .service-hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+        right: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* 2. Absolute Centering for Buttons */
+    .hero-buttons {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-top: 20px !important;
+    }
+
+    .hero-buttons a.hero-btn, .service-hero-buttons a.service-hero-btn {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto 15px auto !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-buttons a.hero-btn span, .service-hero-buttons a.service-hero-btn span {
+        display: inline-block !important;
+        position: static !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center !important;
+        line-height: 1 !important;
+    }
+
+    .hero-buttons a.hero-btn svg, .service-hero-buttons a.service-hero-btn svg {
+        display: inline-block !important;
+        position: static !important;
+        margin: 0 0 0 10px !important; /* Spacing in RTL: margin-left pushes text to the right */
+        padding: 0 !important;
+        flex: 0 0 auto !important;
+    }
+}
+
+/* ==========================================================================
+   UNIVERSAL HEADER & BUTTON FIX FOR ALL PAGES (MOBILE)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* 1. Universal Glass Pill Header */
+    .premium-header, .site-header .premium-header, header.premium-header {
+        border-radius: 50px !important; /* Force capsule shape */
+        background: rgba(26, 23, 20, 0.75) !important; /* Glass effect */
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border: 1px solid rgba(200, 176, 138, 0.3) !important; /* Light gold border */
+        margin: 15px auto !important;
+        width: 90% !important;
+        max-width: 400px !important;
+        padding: 10px 20px !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+    }
+    
+    /* Center the header floating container */
+    site-header {
+        position: absolute !important;
+        top: 10px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 1000 !important;
+        padding: 0 !important;
+    }
+
+    /* 2. Shrink and Center Hero Buttons (All Pages) */
+    .hero-buttons, .service-hero-buttons, .hero-content > div:last-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: 25px !important;
+    }
+
+    .hero-buttons a, .service-hero-buttons a, .hero-btn, .service-hero-btn, .btn-premium, .hero-content a.btn-solid {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 280px !important; /* Prevent giant width, shrink to elegant size */
+        margin: 0 auto 15px auto !important;
+        padding: 14px 20px !important;
+        border-radius: 50px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+
+    /* 3. Center Button Text and Icons Perfectly */
+    .hero-buttons a span, .service-hero-buttons a span, .hero-btn span, .service-hero-btn span, .btn-premium span {
+        display: inline-block !important;
+        position: static !important;
+        flex: 0 0 auto !important; /* Stop text from stretching */
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+        text-align: center !important;
+    }
+
+    .hero-buttons a svg, .service-hero-buttons a svg, .hero-btn svg, .service-hero-btn svg, .btn-premium svg {
+        display: inline-block !important;
+        position: static !important;
+        flex: 0 0 auto !important; /* Stop SVG from stretching */
+        margin: 0 0 0 10px !important; /* 10px gap pushing the text slightly left in RTL */
+        padding: 0 !important;
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+/* ==========================================================================
+   ULTIMATE MASTER FIX: HERO, BUTTONS, & RESPONSIVENESS (DESKTOP & MOBILE)
+   ========================================================================== */
+
+/* 1. Global Reset to Prevent Horizontal Scroll & Gaps */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* 2. Fix Hero Container for ALL screen sizes */
+.hero, .service-hero {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 180px 20px 80px 20px !important; /* Huge top padding to clear header */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+/* Ensure background image covers perfectly without gaps */
+.hero-bg-image {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important; /* Critical for RTL */
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+}
+
+/* Fix Hero Content Box */
+.hero-content, .service-hero-content {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
+    text-align: center !important;
+    z-index: 2 !important;
+}
+
+/* 3. Universal Header Pill Design (Desktop & Mobile) */
+.premium-header, .site-header .premium-header, header.premium-header {
+    border-radius: 50px !important;
+    background: rgba(26, 23, 20, 0.75) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(200, 176, 138, 0.3) !important;
+    margin: 15px auto !important;
+    width: 90% !important;
+    max-width: 1100px !important;
+    padding: 10px 20px !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+}
+
+site-header {
+    position: absolute !important;
+    top: 10px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    z-index: 1000 !important;
+}
+
+/* 4. Ultimate Button Centering (Desktop & Mobile) */
+.hero-buttons, .service-hero-buttons {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-top: 30px !important;
+    z-index: 2 !important;
+    position: relative !important;
+}
+
+/* The exact button style */
+.hero-btn, .service-hero-btn, .btn-premium, .btn-solid {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important; /* Push contents to absolute center */
+    align-items: center !important;
+    width: auto !important;
+    min-width: 200px !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 15px 30px !important;
+    border-radius: 50px !important;
+    box-sizing: border-box !important;
+    text-decoration: none !important;
+    gap: 10px !important; /* Space between icon and text */
+}
+
+/* Force Text and Icon to behave inside the button */
+.hero-btn span, .service-hero-btn span, .btn-premium span, .btn-solid span {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+    text-align: center !important;
+}
+
+.hero-btn svg, .service-hero-btn svg, .btn-premium svg, .btn-solid svg {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+    width: 1.2em !important;
+    height: 1.2em !important;
+}
+
+/* ==========================================================================
+   MOBILE SPECIFIC ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .premium-header, .site-header .premium-header, header.premium-header {
+        max-width: 400px !important;
+        padding: 8px 15px !important;
+    }
+
+    .hero-buttons, .service-hero-buttons {
+        flex-direction: column !important; /* Stack on mobile */
+        gap: 15px !important;
+    }
+
+    .hero-btn, .service-hero-btn, .btn-premium, .btn-solid {
+        width: 100% !important;
+        max-width: 280px !important; /* Shrink to elegant mobile size */
+        padding: 14px 20px !important;
+    }
+
+    .nav-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 10px 0 0 0 !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+}
+
+.hero, .service-hero {
+    border-radius: 0 !important;
+}
+.hero-bg-image {
+    border-radius: 0 !important;
+}

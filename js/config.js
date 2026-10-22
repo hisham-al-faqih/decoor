@@ -1,5 +1,5 @@
 export const SiteConfig = {
-    name: "ديكورات ودهانات الرياض",
+    name: "القمة للدهانات والديكورات والترميمات",
     phone: "0554595628",
   phone2: "0547465053",
     whatsapp: "https://wa.me/message/FSOKLLTRT4R2E1",
